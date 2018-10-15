@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <!-- CSS -->
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style/default.css">
+  <!-- Javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="js/mockHtml5Tags.js"></script>
+  <script src="js/utilities.js"></script>
+  <script src="js/chartScripts.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/tabScripts.js"></script>
+  <script src="js/storageScripts.js"></script>
+  <script src="js/wikiScripts.js"></script>
+  <title>Index</title>
+</head>
+
+<body>
+  <!-- No script -->
+  <noscript>
+    <p>Your browser does not support javascript. Thus, the some features may not work properly.</p>
+  </noscript>
+
+  <!-- Header -->
+  <header id="header">
+    <h1>WikiChart</h1>
+  </header>
+
+  <!-- Notification -->
+  <section id="notification">
+    <p>Thank you for visiting our website!</p>
+  </section>
+
+  <!-- Disable adblock -->
+  <section id="disableAdblock">
+    <p>If you have Adblock, please disable it</p>
+  </section>
+
+  <!-- Error handler -->
+  <section id="errorNotification">
+    <p>One or more errors have occured while loading the data. Please check the "About" tab for more information</p>
+  </section>
+
+  <!-- Brings back to the top of the window -->
+  <a href="#header" id="upTop">Top</a>
+
+  <!-- Tab wrappers -->
+  <section id="tabWrapper">
+    <!-- Tabs -->
+    <a href="#topContent" id="top">Top Articles</a>
+    <a href="#savedContent" id="saved">Saved Articles</a>
+    <a href="#activityContent" id="activity">Activity Chart</a>
+    <a href="#aboutContent" id="about">About</a>
+    <!--Top tab content-->
+    <section id="topContent">
+      <!-- Form -->
+      <form action="#" method="GET" id="settingForm" name="settingForm">
+        <!-- Fieldset -->
+        <fieldset>
+          <!-- Date -->
+          <div id="dateWrapper">
+            <label for="date">Date</label>
+            <input type="text" placeholder="YYYY/MM/DD" name="date" id="date" required="">
+          </div>
+          <!-- Number of articles -->
+          <div id="numberWrapper">
+            <label for="articleCount">Number of articles</label>
+            <select name="articleCount" id="articleCount">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <!-- Language selection -->
+          <div id="languageWrapper">
+            <label for="language">Language</label>
+            <select name="language" id="language">
+              <option value="English">English</option>
+              <option value="Francais">Francais</option>
+            </select>
+          </div>
+          <!-- Submit & Save button -->
+          <div id="buttonWrapper">
+            <button type="button" id="saveButton">Save</button>
+            <button type="submit" value="Submit" id="saveAndSubmitButton">Save & Submit</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Saved tab content -->
+    <section id="savedContent">
+      <p>Nothing saved yet</p>
+    </section>
+
+    <!-- Chart.js tab content -->
+    <section id="activityContent">
+      <!-- Article selection -->
+      <div id="articleWrapper">
+        <label for="article">Name of article</label>
+        <input type="text" placeholder="ex: Stephen Kwan" name="article" id="article" required="">
+      </div>
+      <!-- Language selection -->
+      <div id="articleLanguageWrapper">
+        <label for="articleLanguage">Language</label>
+        <select name="articleLanguage" id="articleLanguage">
+          <option value="English">English</option>
+          <option value="Francais">Francais</option>
+        </select>
+      </div>
+      <!-- Submit button -->
+      <div id="activityButtonWrapper">
+        <button type="button" id="activityButton">Search</button>
+      </div>
+      <!-- Chart tab wrapper -->
+      <div id="chartWrapper">
+        <!-- Chart canvas -->
+        <canvas id="chart"></canvas>
+      </div>
+    </section>
+
+    <!-- About tab -->
+    <section id="aboutContent">
+      <div id="faqWrapper">
+        <h3 id="faq">Frequently Asked Questions</h3>
+        <h4>What is your name?</h4>
+        <p>My name is Stephen Kwan</p>
+        <h4>Which program are you studying in?</h4>
+        <p>Computer Science Technology</p>
+        <h4>Which school are you attending?</h4>
+        <p>Dawson College in Montreal, Canada</p>
+        <h4>How many languages do you know?</h4>
+        <p>Java, C#, Html & Css, Javascript, SQL, PL/SQL</p>
+        <h4>What is the goal of this website?</h4>
+        <p>The goal of this website is to use the Wikimedia REST API to highlight particularly popular Wikipedia articles and
+          display some interesting data about them</p>
+        <h4>Which API did you use?</h4>
+        <ul>
+          <li>
+            <a href="https://en.wikipedia.org/api/rest_v1/#!/Page_content/get_page_summary_title">Get a text extract & thumb summary of a page</a>
+          </li>
+          <li>
+            <a href="https://wikimedia.org/api/rest_v1/#!/Pageviews_data/get_metrics_pageviews_top_project_access_year_month_day">Get the most viewed articles for a project</a>
+          </li>
+          <li>
+            <a href="https://wikimedia.org/api/rest_v1/#!/Pageviews_data/get_metrics_pageviews_per_article_project_access_agent_article_granularity_start_end">Get pageview counts for a page</a>
+          </li>
+        </ul>
+        <h4>How do I use this website?</h4>
+        <p>For Top Articles tab, you can search the top english or french articles of a date under the format of YYYY/MM/DD.
+          You can also bookmark and unbookmark them.</p>
+        <p>For Saved Articles tab, it contains all the saved articles. You can unbookmark them from as well.</p>
+        <p>For Activity Chart, you can search a specific article and it will return the monthly views for the past twelve months.
+          As for the input, please write it under this format: "Jackie Chan" and not "Jackie_Chan". If you are unable to
+          find the article, please go to
+          <a href="https://en.wikipedia.org/">Wikipedia</a>, find the article and copy the title and paste it in the textbox.</p>
+        <h4>Possible error issues</h4>
+        <ul>
+          <li>Adblock may be block server requests, please disable it</li>
+          <li>Client errors, such as invalid input</li>
+          <li>Server errors, such as corrupted article links</li>
+          <li>Not supported in < IE 9 due to cross-browser issues</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <a href="https://github.com/kwan-s">
+      <img class="pngicongithub" src="assets/icongithub.png" alt="github icon">
+    </a>
+    <a href="https://twitter.com">
+      <img class="pngicontwitter" src="assets/icontwitter.png" alt="twitter icon">
+    </a>
+    <a href="https://linkedin.com">
+      <img class="pngiconlinkedin" src="assets/iconlinkedin.png" alt="linkedin icon">
+    </a>
+    <p>Copyright 2018 © Stephen Kwan</p>
+  </footer>
+
+</body>
+
+</html>

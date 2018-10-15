@@ -1,0 +1,189 @@
+@font-face {
+  font-family: vrr;
+  src: url('../fonts/varelaroundregular.ttf');
+}
+
+/*
+The following rule sets the padding and margin sizes for all elements and sides to zero and also forces the
+browser to include padding and border in its width or height calculations for all boxes (margins are still
+excluded from the calculation
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+The following rule is required to fix the height issues when using percentages and the browser is not
+in quirks mode (ie: you have a valid doctype tag
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: vrr, sans-serif;
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+fieldset {
+  border: none;
+}
+
+noscript {
+  color: red;
+  text-align: center;
+}
+
+article a {
+  color: black;
+  text-decoration: underline;
+}
+
+article a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+span {
+  font-size: 23px;
+  cursor: pointer;
+  margin-right: 1%;
+}
+
+article img {
+  margin-top: 2%;
+  padding: 2px;
+  border: 1px solid #021a40;
+  background-color: #CDD7D6;
+}
+
+#faqWrapper h4 {
+  margin-top: 1%;
+}
+
+footer a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+footer p {
+  padding-top: 15px;
+  font-family: vrr, sans-serif;
+}
+
+footer {
+  clear: both;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.pngicongithub,
+.pngicontwitter,
+.pngiconlinkedin {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#header {
+  text-align: center;
+  margin-top: 2%;
+  color: black;
+}
+
+#notification {
+  text-align: center;
+  visibility: hidden;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  color: red;
+}
+
+#errorNotification {
+  text-align: center;
+  display: none;
+  color: red;
+  margin-bottom: 2%;
+}
+
+#disableAdblock {
+  display: none;
+  color: red;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+#dateWrapper,
+#numberWrapper,
+#languageWrapper,
+#buttonWrapper,
+#articleWrapper,
+#articleLanguageWrapper,
+#activityButtonWrapper {
+  display: inline;
+}
+
+#top,
+#saved,
+#activity,
+#about {
+  font-size: 110%;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  background-color: white;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+#topContent,
+#savedContent,
+#activityContent,
+#aboutContent {
+  background-color: #CDD7D6;
+  border: 1px solid black;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+#upTop {
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  border: 1px black solid;
+  padding: 5px;
+}
+
+#faq {
+  text-decoration: underline;
+}
